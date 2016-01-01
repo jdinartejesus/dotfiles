@@ -1,0 +1,51 @@
+[user]
+	name = Dinarte Jesus
+	email = jdinartejesus@gmail.com
+[core]
+	editor = vim
+	excludesfile = ~/.gitignore_global
+[push]
+	default = simple
+[alias]
+	s = status	
+	## add
+	a = add
+	aa = add --all
+	## checkout
+	o = checkout
+	ob = checkout -b
+	## commit
+	c = commit 
+	cm = commit -m 
+	ca = commit --amend 
+	## branch
+	b = branch
+	bd = branch -d
+	br = branch -r
+	## diff
+	d = diff
+	dt = difftool
+	## remote
+	pul = pull
+	pus = push
+	fet = fetch
+	## others
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph
+	undo = checkout --
+	unstage = reset --hard HEAD	
+[color]
+	ui = auto
+[color "branch"]
+	current = yellow bold
+	local = green bold
+	remote = cyan bold
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[color "status"]
+	added = green bold
+	changed = yellow bold
+	untracked = red bold
