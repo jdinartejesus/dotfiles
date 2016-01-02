@@ -4,5 +4,7 @@
 
 OS X:
 
-```brew tap thoughtbot/formulae
-brew install rcm```
+```
+brew tap thoughtbot/formulae
+brew install rcm
+```
