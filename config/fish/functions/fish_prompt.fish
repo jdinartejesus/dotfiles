@@ -1,0 +1,1 @@
+/Users/dinartejesus/.local/share/omf/themes/agnoster/fish_prompt.fish
