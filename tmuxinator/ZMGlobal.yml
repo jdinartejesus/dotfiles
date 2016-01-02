@@ -33,3 +33,8 @@ windows:
       panes:
         - vim
         -
+  - server:
+      layout: main-vertical
+      panes:
+        - gulp
+        - git status
