@@ -1,4 +1,4 @@
 COPY_ALWAYS="ssh/id_* weechat/* netrc"
-EXCLUDES="irbrc dotfiles:python* README.md LICENSE *_history"
+EXCLUDES="irbrc dotfiles:python* README.md LICENSE *:_history *:_profile"
 DOTFILES_DIRS="$HOME/.dotfiles"
 HOSTNAME=$USER
