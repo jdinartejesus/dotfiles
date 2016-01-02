@@ -1,0 +1,7 @@
+# System default files
+*.cache
+.DS_Store
+
+# Personal information and used commands
+*_history
+*_profile
