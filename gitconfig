@@ -3,7 +3,7 @@
 	email = jdinartejesus@gmail.com
 [core]
 	editor = vim
-	excludesfile = ~/.gitignore_global
+	excludesfile = ~/.gitignore
 [push]
 	default = simple
 [alias]
