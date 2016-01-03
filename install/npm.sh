@@ -2,7 +2,7 @@
 
 # Install node packages using NPM.
 
-# Install node using nvm
+Install node using nvm
 brew install nvm
 
 # Install and run latest version of Node.
@@ -16,13 +16,13 @@ npm install npm -g
 npm update -g
 
 # Packages to install
-packages = {
+packages=(
   gulp
   bower
   webpack
   eslint
   eslint-plugin-react
-}
+)
 
 # Install all packages
-npm install -g "${packages[@]}"
+npm install -g ${packages[@]}
