@@ -2,6 +2,6 @@
 *.cache
 .DS_Store
 
-# Personal information and used commands
+# Personal information and shell history
 *_history
 *_profile
