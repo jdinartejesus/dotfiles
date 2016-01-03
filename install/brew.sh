@@ -1,8 +1,8 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # Install command-line tools using Homebrew.
 
-# Ask for the administrator password upfront.
+#Ask for the administrator password upfront.
 sudo -v
 
 # Keep-alive: update existing `sudo` time stamp until the script has finished.
@@ -15,7 +15,7 @@ brew update
 brew upgrade --all
 
 # Apps to install
-apps = {
+apps=(
   git
   ack
   tree
@@ -23,7 +23,7 @@ apps = {
   fish
   tig
   rcm
-}
+)
 
 # Install all apps
 brew install "${apps[@]}"
