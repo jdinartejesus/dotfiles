@@ -8,23 +8,25 @@
 OS X:
 
 ```
-brew tap thoughtbot/formulae
-brew install rcm
+$ brew tap thoughtbot/formulae
+$ brew install rcm
 ```
 
 Ubuntu:
 
 ```
-sudo add-apt-repository ppa:martin-frost/thoughtbot-rcm
-sudo apt-get update
-sudo apt-get install rcm
+$ sudo add-apt-repository ppa:martin-frost/thoughtbot-rcm
+$ sudo apt-get update
+$ sudo apt-get install rcm
 ```
+
+`TODO - Include RCM installer on OSX/Ubuntu`
 
 2 - Clone the Repository
 
 ```
-cd ~/
-git clone git@github.com:jdinartejesus/dotfiles.git .dotfiles
+$ cd ~/
+$ git clone git@github.com:jdinartejesus/dotfiles.git .dotfiles
 ```
 
 3 - Create the Symlinks
@@ -35,13 +37,13 @@ git clone git@github.com:jdinartejesus/dotfiles.git .dotfiles
 - rcdn    - *Remove dotfiles*
 
 ```
-lsrc
-rcup -v
+$ lsrc
+$ rcup -v
 ```
 
 4 - Install Apps and Packages
 
 ```
 TODO - Run brew (OSX) or apt-get (Ubuntu)
-TODO - Run npm
+$ bash ~/.install/run.sh
 ```
