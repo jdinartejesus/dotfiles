@@ -1,8 +1,8 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # Install node packages using NPM.
 
-Install node using nvm
+#Install node using nvm
 brew install nvm
 
 # Install and run latest version of Node.
@@ -22,6 +22,8 @@ packages=(
   webpack
   eslint
   eslint-plugin-react
+  lodash
+  coffee-script
 )
 
 # Install all packages
