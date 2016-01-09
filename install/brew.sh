@@ -23,6 +23,9 @@ apps=(
   fish
   tig
   rcm
+  nvm
+  atom
+  cask
 )
 
 # Install all apps
