@@ -58,9 +58,6 @@
 
   if [[ $installAtom =~ [yY]$ ]];
     then
-      echo
-      echo "let's do it"
-
       ATOM=$HOME/.install/atom.sh
 
       if [ -f $ATOM ];
@@ -71,9 +68,9 @@
       fi
       echo
       echo "...done."
-      
+
   elif [[ $installAtom =~ [nN]$ ]];
     then
       echo
-      echo "ok ok"
+      echo "Everything installed and updated!"
   fi
