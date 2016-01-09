@@ -1,3 +1,5 @@
+package osx
+package tab
 theme agnoster
 theme default
 theme sushi
