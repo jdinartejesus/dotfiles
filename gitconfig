@@ -26,9 +26,7 @@
 	d = diff
 	dt = difftool
 	## remote
-	pul = pull
-	pus = push
-	fet = fetch
+	po = git push --set-upstream origin
 	## others
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph
 	undo = checkout --
