@@ -8,14 +8,21 @@ sudo -v
 # Keep-alive: update existing `sudo` time stamp until the script has finished.
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
-# Make sure we’re using the latest Homebrew.
-brew update
+# Make sure brew is installed and updated.
+which -s brew
+if [[ $? != 0 ]];
+  then
+    # Install Homebrew
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+else
+  brew update
+if
 
 # Upgrade any already-installed formulae.
 brew upgrade --all
 
-# Apps to install
-apps=(
+# Tools to install
+tools=(
   git
   ack
   tree
@@ -24,9 +31,7 @@ apps=(
   tig
   rcm
   nvm
-  atom
-  cask
 )
 
-# Install all apps
-brew install "${apps[@]}"
+# Install all tools
+brew install "${tools[@]}"
