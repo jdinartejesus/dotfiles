@@ -31,5 +31,5 @@ windows:
   - server:
       layout: main-vertical
       panes:
-        - gulp pages --site zm & gulp pages:serve --site zm
+        - gulp --locale en
         - git checkout develop & git pull & git status
