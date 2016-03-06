@@ -4,9 +4,31 @@
 # Environment for Development
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-# Create folder Develop
+# Paths with list of tools to install
 
-  DEV=$HOME/develop
+DEV=$HOME/develop
+APPS=$HOME/.dotfiles/install/apps.sh
+TOOLS=$HOME/.dotfiles/install/brew.sh
+PACKAGES=$HOME/.install/npm.sh
+ATOM=$HOME/.install/atom.sh
+
+# Chooser for installations options
+installOptions() {
+
+  printf "Install $1? [Y/n]: "
+  read -n 1 install
+  printf "\n"
+
+  # Run while don't have right value
+  while [[ ! $install =~ ^([yY]|[nN])$ ]]
+  do
+    printf "Install $1? [Y/n]: "
+    read -n 1 install
+    printf "\n"
+  done
+}
+
+# Create folder Develop
 
   if [ -d $DEV ];
     then
@@ -18,58 +40,91 @@
 
 # Install all the Apps
 
-  APPS=$HOME/.install/brew.sh
+  #TODO find Better name
+  installOptions "OS Apps"
 
-  if [ -f $APPS ];
+  if [[ $install =~ [yY]$ ]];
     then
-      echo "- - - - - - - - - - - - - - - - - - - - -"
-      printf 'Installing Apps from \n '$APPS' \n'
-      bash $APPS
+
+      # Check the OS to use the Package Management (Brew or apt-get)
+      if [ "$(uname)" == "Darwin" ];
+        then
+          OS="OSX"
+      elif [ "$(uname)" == "Linux" ];
+        then
+          #TODO: Missing support for linux
+          OS="Linux"
+          printf "Sorry don't have support for Linux will be implement \n"
+      else
+        OS="$(uname)"
+        export $OS
+        printf "Sorry don't have support for "$OS" \n"
+      fi
+
+      # Check the list of Apps
+      if [ -f $APPS ];
+        then
+          echo "- - - - - - - - - - - - - - - - - - - - -"
+          printf "Installing "$OS" Apps from \n "$APPS" \n"
+          Bash $APPS
+
+      fi
+      echo
+      echo "...done."
   fi
-  echo
-  echo "...done."
 
-# Install all the Packages
+# Install all the Command-line Tools
 
-  PACKAGES=$HOME/.install/npm.sh
+  installOptions "Command-Line tools"
 
-  if [ -f $PACKAGES ];
+  if [[ $install =~ [yY]$ ]];
     then
-      echo "- - - - - - - - - - - - - - - - - - - - -"
-      printf 'Installing Packages from \n '$PACKAGES' \n'
-      bash $PACKAGES
+
+      if [ -f $TOOLS ];
+        then
+          echo "- - - - - - - - - - - - - - - - - - - - -"
+          printf "Installing command-line tools from \n "$TOOLS" \n"
+          Bash $TOOLS
+
+      fi
+      echo
+      echo "...done."
   fi
-  echo
-  echo "...done."
+
+# Install all the Nodejs Packages
+
+  installOptions "Node Packages"
+
+  if [[ $install =~ [yY]$ ]];
+    then
+
+      if [ -f $PACKAGES ];
+        then
+          echo "- - - - - - - - - - - - - - - - - - - - -"
+          printf "Installing Nodejs Packages from \n "$PACKAGES" \n"
+          bash $PACKAGES
+      fi
+      echo
+      echo "...done."
+  fi
 
 # Install Atom and all the Packages
 
-  printf "Install Atom? [Y/n]: "
-  read -n 1 installAtom
-  printf "\n"
+  installOptions "Atom and Packages"
 
-  # Run While don't have right value
-  while [[ ! $installAtom =~ ^([yY]|[nN])$ ]]
-  do
-    printf "Install Atom? [Y/n]: "
-    read -n 1 installAtom
-    printf "\n"
-  done
-
-  if [[ $installAtom =~ [yY]$ ]];
+  if [[ $install =~ [yY]$ ]];
     then
-      ATOM=$HOME/.install/atom.sh
 
       if [ -f $ATOM ];
         then
           echo "- - - - - - - - - - - - - - - - - - - - -"
-          printf 'Installing Atom from \n '$ATOM' \n'
+          printf "Installing Atom from \n "$ATOM" \n"
           bash $ATOM
       fi
       echo
       echo "...done."
 
-  elif [[ $installAtom =~ [nN]$ ]];
+  elif [[ $install =~ [nN]$ ]];
     then
       echo
       echo "Everything installed and updated!"
