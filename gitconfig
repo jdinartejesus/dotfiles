@@ -3,11 +3,11 @@
 	email = jdinartejesus@gmail.com
 [core]
 	editor = vim
-	excludesfile = /Users/dinartejesus/.gitignore
+	excludesfile = \"$HOME\"/.gitignore
 [push]
 	default = simple
 [alias]
-	s = status	
+	s = status
 	## add
 	a = add
 	aa = add --all
@@ -15,9 +15,9 @@
 	o = checkout
 	ob = checkout -b
 	## commit
-	c = commit 
-	cm = commit -m 
-	ca = commit --amend 
+	c = commit
+	cm = commit -m
+	ca = commit --amend
 	## branch
 	b = branch
 	bd = branch -d
@@ -30,7 +30,7 @@
 	## others
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph
 	undo = checkout --
-	unstage = reset --hard HEAD	
+	unstage = clean -f -d
 [color]
 	ui = auto
 [color "branch"]
@@ -53,7 +53,9 @@
 	required = true
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[commit]
+	template = \"$HOME\"/.stCommitMsg

@@ -1,0 +1,23 @@
+[ui]
+username = jdinartejesus <jdinartejesus@gmail.com>
+interface = curses
+editor = vim
+[diff]
+git = 1
+showfunc = 1
+unified = 8
+[alias]
+wip = log --graph --rev=wip --template=wip
+[revsetalias]
+wip = (parents(not public()) or not public() or . or (head() and branch(default))) and (not obsolete() or unstable()^) and not closed()
+[mqext]
+mqcommit = auto
+[defaults]
+qnew = -U
+[pager]
+pager = LESS=FRSXQ less
+attend-help = true
+attend-incoming = true
+attend-outgoing = true
+attend-status = true
+attend-wip = true
